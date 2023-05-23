@@ -1,0 +1,23 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Minha loja de Computadores - Lista de todos os Fabricantes
+{% endblock %}
+
+
+{% block content %}
+
+  <p><a href='/'>HOME - Loja de Computadores</a></p>
+  <h1> Fabricantes</h1>
+  <hr color="blue" size="3" style="border-style: dashed;">
+
+  <ul>
+  {% for x in fabricantes %}
+    <li>
+      <a href="detalhes/{{ x.id }}">{{ x.nome }} {{ x.email }}</a> 
+    </li>
+  {% endfor %}
+  </ul>
+  <hr color="blue" size="3" style="border-style: dashed;">
+
+{% endblock %}
