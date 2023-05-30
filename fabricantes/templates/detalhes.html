@@ -7,15 +7,19 @@
 
 {% block content %}
 
-  <p><a href='/'>HOME - Loja de Computadores</a></p>
-  <h1>{{ fabricante.nome }}</h1>
-  <hr color="blue" size="3" style="border-style: dashed;">
+<div class="card mt-2">
+  <div class="card-header">
+    Details about {{ fabricante.nome }}
+  </div>
 
-  <p>Endreço: {{ fabricante.endereco }}</p>
-  <p>Email: {{ fabricante.email }}</p>
-  <p>Telefone: {{ fabricante.telefone }}</p>
+  <div class= "card-body">
+    <h1>{{ fabricante.nome }}</h1>
 
-  <hr color="blue" size="3" style="border-style: dashed;">
-  <p>Back to <a href='/fabricantes'>Fabricantes</a></p>
+    <p>Endreço: {{ fabricante.endereco }}</p>
+    <p>Email: {{ fabricante.email }}</p>
+    <p>Telefone: {{ fabricante.telefone }}</p>
+
+  </div>
+</div>
 
 {% endblock %}   
