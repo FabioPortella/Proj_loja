@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg" style="background-color: #8BBF86;">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">Minha Loja</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,6 +18,10 @@
             <a class="nav-link active" aria-current="page" href="/admin">Admin - Django</a>
           </li>      
         </ul>
+        <form class="d-flex" role="search">
+          {% load static %}
+          <img src="{% static 'img/ifsp.png'%}" width='100'/>
+        </form>
       </div>
     </div>
   </nav>
