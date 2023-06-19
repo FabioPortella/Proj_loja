@@ -52,3 +52,25 @@ def delete(request, id):
     fabricante = Fabricante.objects.get(id=id)
     fabricante.delete()
     return HttpResponseRedirect(reverse('fabricantes'))
+
+def update(request, id):
+    fabricante = Fabricante.objects.get(id=id)
+    template = loader.get_template('update.html')
+    context = {
+        'fabricante': fabricante,
+    }
+    return HttpResponse(template.render(context, request))
+
+def updaterecord(request, id):
+    nome = request.POST['nome']
+    endereco = request.POST['endereco']
+    telefone = request.POST['telefone']
+    email = request.POST['email']
+
+    member = Fabricante.objects.get(id=id)
+    member.nome = nome
+    member.endereco = endereco
+    member.telefone = telefone
+    member.email = email
+    member.save()
+    return HttpResponseRedirect(reverse('fabricantes'))

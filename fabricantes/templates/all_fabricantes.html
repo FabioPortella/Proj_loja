@@ -13,16 +13,28 @@
     Fabricantes
   </div>
 
+
   <div class="card-body">
-    <ul class="list-group">
-    {% for x in fabricantes %}
-      <li class="list-group-item"><a href="detalhes/{{ x.id }}">{{ x.nome }}</a> </li>
-      <a href="delete/{{x.id }}" class="ms-2 btn"><i class="fa-solid fa-trash-can"></i></a>
-      
-    {% endfor %}
-    </ul>
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for x in fabricantes %}
+        <tr>
+          <th><a href="detalhes/{{ x.id }}" style="text-decoration: none; color: inherit;">{{ x.nome }} </a></th>
+          <td>
+            <a href="delete/{{x.id }}" class="ms-2 btn"><i class="fa-solid fa-trash-can"></i></a>
+            <a href="update/{{x.id }}" class="ms-2 btn"><i class="fa-solid fa-pen"></i></a>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <a href="add/" class="btn btn-primary">Adiciona novo Fabricante</a>
   </div>
-  <a href="add/" class="btn btn-primary">Adiciona novo Fabricante</a>
-</div>
 
 {% endblock %}

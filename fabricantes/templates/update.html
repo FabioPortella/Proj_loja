@@ -1,0 +1,39 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Minha Loja - Atualizando Fabricante
+{% endblock %}
+
+
+{% block content %}
+    <div class='card mt-2'>
+        <div class='card-header text-center'>
+          <h3>Atualizando Fabricante</h3> 
+        </div>
+        <div class="card-body">
+            <form action="updaterecord/{{ fabricante.id }}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="first-name">Nome:</label>
+                  <input type="text" class="form-control" id="nome" name="nome" value="{{ fabricante.nome }}">
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Endereco:</label>
+                  <input type="text" class="form-control" id="endereco" name="endereco" value="{{ fabricante.endereco }}">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Telefone:</label>
+                  <input type="text" class="form-control" id="telefone" name="telefone" value="{{ fabricante.telefone }}">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" class="form-control" id="email" name="email" value="{{ fabricante.email}}">
+                </div>
+
+                <br>
+                <button type="submit" class="btn btn-success">Atualizar</button>
+              </form>              
+              <br><p><a class="btn btn-secondary" href="/fabricantes">Voltar</a></p>
+        </div>
+    </div>   
+{% endblock %}  
