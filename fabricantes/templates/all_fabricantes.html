@@ -17,9 +17,12 @@
     <ul class="list-group">
     {% for x in fabricantes %}
       <li class="list-group-item"><a href="detalhes/{{ x.id }}">{{ x.nome }}</a> </li>
+      <a href="delete/{{x.id }}" class="ms-2 btn"><i class="fa-solid fa-trash-can"></i></a>
+      
     {% endfor %}
     </ul>
   </div>
+  <a href="add/" class="btn btn-primary">Adiciona novo Fabricante</a>
 </div>
 
 {% endblock %}
