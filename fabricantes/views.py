@@ -10,13 +10,13 @@ def fabricantes(request):
     fabricantes = Fabricante.objects.all().values()
     template = loader.get_template('all_fabricantes.html')
 
-    paginator = Paginator(fabricantes, 5)
+    paginator = Paginator(fabricantes, 4)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
     context = {
         'fabricantes': fabricantes,
-        'page-obj': page_obj
+        'page_obj': page_obj,
     }
     return HttpResponse(template.render(context, request))
 

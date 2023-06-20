@@ -23,7 +23,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for x in fabricantes %}
+        {% for x in page_obj %}
         <tr>
           <th><a href="detalhes/{{ x.id }}" style="text-decoration: none; color: inherit;">{{ x.nome }} </a></th>
           <td>
@@ -35,6 +35,17 @@
       </tbody>
     </table>
     <a href="add/" class="btn btn-primary">Adiciona novo Fabricante</a>
+    <br> <hr>
+    <nav class="d-flex justify-content-center">
+      <ul class='pagination mt-3'>
+        <li class="page_item"><a class="page-link" href="?page=1">Primeiro</a></li>
+        {% for p in page_obj.paginator.page_range %}
+        <li class="page_item"><a class="page-link" href="?page={{p}}">{{p}}</a></li>
+        {% endfor %}
+        <li class="page_item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages}}">Último</a></li>
+      </ul>
+    </nav>
+
   </div>
 
 {% endblock %}
