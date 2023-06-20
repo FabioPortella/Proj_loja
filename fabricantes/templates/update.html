@@ -29,6 +29,14 @@
                   <label for="email">Email:</label>
                   <input type="email" class="form-control" id="email" name="email" value="{{ fabricante.email}}">
                 </div>
+                <div class="form-group">
+                  <label>Tipo de Produto Fabricado:</label>
+                  <select class="form-select" name="tipo">
+                    {% for x in tipos %}
+                    <option {% if x.id == fabricante.tipo.id %} selected {% endif %} value="{{ x.id}}"> {{ x.titulo }}</options>
+                    {% endfor %}
+                  </select>
+                </div>
 
                 <br>
                 <button type="submit" class="btn btn-success">Atualizar</button>
